@@ -1,2 +1,2 @@
 #!/bin/bash
-echo '"(Ôo)\'' > confused_smiley.txt | less confused_smley.txt
+echo '"(Ôo)\''
