@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Displays different messages at different iteration
+
+i=1
+while [ $i -ne 21 ]
+do
+	case $i in
+		4) echo -e $i "\nbad luck from China";;
+		9) echo -e $i "\nbad luck from Japan";;
+		17) echo -e $i "\nbad luck from Italy";;
+		*) echo $i;;
+		
+	esac
+	((i += 1))
+done
