@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Displays the content of current directory
+
+for name in *
+do
+	IFS='-'
+	read -ra strarr <<< "$name"
+	echo "${strarr[1]}"
+done
