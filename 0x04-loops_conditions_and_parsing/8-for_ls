@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Displays the content of current directory
 
-for name in *
+for name in *-*
 do
 	IFS='-'
 	read -ra strarr <<< "$name"
