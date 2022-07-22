@@ -4,7 +4,7 @@
 file=./school
 if [ -e "$file" ]
 then
-	echo "school file exits"
+	echo "school file exists"
 	if [ ! -s "$file" ]
 	then
 		echo "school file is empty"
