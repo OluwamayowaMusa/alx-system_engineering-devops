@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script lines containing bash keyword
+# shellcheck disable=SC2009
+ps axuf | grep bash
