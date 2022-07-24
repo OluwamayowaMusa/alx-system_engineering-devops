@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # This Script kills a process
-i=$(pgrep "bash")
+i=$(pidof "bash")
 IFS=' '
-j=$(echo "$i" | tail -2 | head -1)
-skill "$j"
+read -ra strarr <<< "$i"
+skill "${strarr[1]}"
