@@ -5,5 +5,5 @@ while read -r line
 do
 	IFS=':'
 	read -ra strarr <<< "$line"
-	echo "The user ${strarr[0]} is part of the ${strarr[3]} gang, lives in ${strarr[5]} and rides ${strarr[6]}. ${strarr[2]}'s place is protected by the password ${strarr[1]}, more info about the user here: ${strarr[4]}"
+	echo "The user ${strarr[0]} is part of the ${strarr[3]} gang, lives in ${strarr[5]} and rides ${strarr[6]}. ${strarr[2]}'s place is protected by the passcode ${strarr[1]}, more info about the user here: ${strarr[4]}"
 done < "$filename"
