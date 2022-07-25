@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script sends a signal SIGTERM to a process
+i=$(pgrep -f 7-highlander)
+kill "$i"
