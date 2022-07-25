@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 # Displays the content of current directory
-
-for name in `ls`
+list=$(ls)
+for name in $list
 do
-	IFS='-'
-	read -ra strarr <<< "$name"
-	echo "${strarr[1]}"
+	echo "$name" | cut -d '-' -f2
 done
