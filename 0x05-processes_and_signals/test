@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-kill -s 19 $(pgrep -f "7*")
