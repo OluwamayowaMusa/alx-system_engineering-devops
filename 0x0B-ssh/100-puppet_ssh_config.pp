@@ -1,7 +1,15 @@
-# Configure server using puppet
+# Configure client config file using puppet
 
-file { 'ssh/config' :
-  ensure  => file,
-  path    => '~/.ssh/config',
-  content => 'Host 18627-web-01\n\tHostName 18627-web-01\n\tUser ubuntu\n\tIdentityFile ~/.ssh/school'
+file_line { 'no passwd' :
+  ensure => present,
+  path => '/etc/ssh/ssh_config',
+  line => '    PasswordAuthentication no',
+  replace => true
 }
+
+file_line { 'identity file' :
+  ensure => present,
+  path => '/etc/ssh/ssh_config',
+  line => '    IdentityFile ~/.ssh/school',
+  replace => true
+} 
