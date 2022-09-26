@@ -14,7 +14,7 @@ http {
     server_name musaoluwamayowa.tech;
 
     location /xyz {
-      return 404 "Ceci n'est pas une page\n";
+      return 404 "Ceci n'est pas une page";
     }
 
   }
