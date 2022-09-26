@@ -2,5 +2,5 @@
 # Install Nginx and modify the index.html 
 
 sudo apt-get -y update
-sudo apt-get install nginx
-echo "Hello World" > /var/www/html/index.nginx-debian.html
+sudo apt-get -y install nginx
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
