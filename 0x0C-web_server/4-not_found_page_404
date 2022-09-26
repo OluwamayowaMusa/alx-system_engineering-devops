@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Install nginx server and configure it to requirements
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
+sudo cat << EOF | sudo tee /etc/nginx/nginx.conf
+events {
+}
+
+http {
+  server {
+    listen 80;
+    server_name musaoluwamayowa.tech;
+
+    location /xyz {
+      return 404 "Ceci n'est pas une page\n\n";
+    }
+
+  }
+
+}
+EOF
+sudo nginx -t
+sudo nginx -s reload
