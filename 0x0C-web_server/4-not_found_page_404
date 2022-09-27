@@ -13,8 +13,8 @@ http {
     listen 80;
     server_name musaoluwamayowa.tech;
 
-    location /xyz {
-      return 404 "Ceci n'est pas une page";
+    location / {
+      return 404 "Ceci n'est pas une page\n\n";
     }
 
   }
