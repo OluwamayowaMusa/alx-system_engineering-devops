@@ -3,23 +3,6 @@
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
-sudo cat << EOF | sudo tee /etc/nginx/nginx.conf
-events {
-}
-
-http {
-  server {
-    listen 80;
-    server_name musaoluwamayowa.tech;
-
-    location / {
-      return 404 "Ceci n'est pas une page\n\n";
-    }
-
-  }
-
-}
-EOF
-sudo nginx -t
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/errr.html
+sed -i "46i error_page 404 /errr.html;" /etc/nginx/sites-available/default
 sudo nginx -s reload
