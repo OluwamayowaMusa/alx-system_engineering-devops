@@ -3,5 +3,5 @@
 
 sudo apt-get -y update
 sudo apt-get install -y nginx
-sed -i '16iadd_header X-Served-By $hostname;' /etc/nginx/nginx.conf
+sudo sed -i '16iadd_header X-Served-By $hostname;' /etc/nginx/nginx.conf
 sudo service nginx restart
