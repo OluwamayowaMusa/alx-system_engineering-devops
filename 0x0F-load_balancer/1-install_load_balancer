@@ -17,3 +17,6 @@ backend web
     server 18627-web-01 3.238.25.45:80 check
     server 18627-web-02 44.192.21.5:80 check
 EOF
+sudo systemctl start haproxy
+sudo systemctl enable haproxy
+sudo systemctl restart haproxy
