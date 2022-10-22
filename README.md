@@ -1,1 +1,3 @@
-This contains shell scripts which contains commands and permissions.
+# System Engineering and Devops
+
+This repository contains lesson on bash, system engineering and devops.
