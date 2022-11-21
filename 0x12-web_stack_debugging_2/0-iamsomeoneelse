@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Print username
-sudo -u "$1" whoami
