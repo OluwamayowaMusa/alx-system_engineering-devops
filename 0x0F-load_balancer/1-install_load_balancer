@@ -21,7 +21,7 @@ backend web
     timeout connect 20s
     timeout server 20s
     balance   roundrobin
-    server 18627-web-01 100.26.212.211:80 check
-    server 18627-web-02 34.202.234.174:80 check
+    server 18627-web-01 3.84.237.196:80 check
+    server 18627-web-02 3.80.19.23:80 check
 EOF
 sudo service haproxy restart
