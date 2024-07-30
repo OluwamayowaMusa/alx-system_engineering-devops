@@ -2,29 +2,31 @@
 """ Access an API for a given employee ID and returns information
     about his/her TODO list progress.
 """
-import csv
 import json
 import sys
 from urllib import request
 
 
-def export_to_csv(data):
-    """ Save todos data in cvs format
+def export_to_json(data):
+    """ Save data in json format
 
     Args:
-        data (dict): Dictionary containing info about employee
-                     and todos
-
+        data (list): List of dict containing info about userId, username
+                     task_title
     """
     employee_info = data["EmployeeInfo"]
     todo_list = data["TodosData"]
-    with open(f"{employee_info['id']}.csv", 'w', encoding="utf8") as csvfile:
-        csv_writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-        for todo in todo_list:
-            csv_writer.writerow([employee_info["id"],
-                                 employee_info["username"],
-                                 todo["completed"],
-                                 todo["title"]])
+
+    employee_dict = {f"{employee_info['id']}": []}
+
+    for todo in todo_list:
+        employee_dict[f"{employee_info['id']}"].append(
+                {"task": todo["title"],
+                 "completed": todo["completed"],
+                 "username": employee_info["username"]})
+
+    with open(f"{employee_info['id']}.json", 'w', encoding="utf8") as jsonfile:
+        json.dump(employee_dict, jsonfile)
 
 
 def gather_data_from_api(base_url, employee_id):
@@ -73,4 +75,4 @@ if __name__ == "__main__":
         sys.exit(1)
     id_ = int(sys.argv[1])
     employee_data = gather_data_from_api(URL, id_)
-    export_to_csv(employee_data)
+    export_to_json(employee_data)
