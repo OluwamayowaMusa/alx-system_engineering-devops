@@ -23,7 +23,7 @@ def gather_data_from_api(base_url, employee_id):
                                 f"todos?userId={employee_id}&completed=true")
 
     print(f"Employee {employee_name} is done"
-          f" with tasks {len(completed_todos)}/{len(total_todos)}")
+          f" with tasks ({len(completed_todos)}/{len(total_todos)})")
 
     for todos in completed_todos:
         print(f"\t {todos['title']}")
