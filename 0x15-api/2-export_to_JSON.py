@@ -71,7 +71,7 @@ if __name__ == "__main__":
     URL = "https://jsonplaceholder.typicode.com"
     if len(sys.argv) != 2:
         print("Not the right format. \
-                Format ./0-gather_data_from_an_API.py <employee_id>")
+                Format ./2-export_to_JSON.py <employee_id>")
         sys.exit(1)
     id_ = int(sys.argv[1])
     employee_data = gather_data_from_api(URL, id_)
