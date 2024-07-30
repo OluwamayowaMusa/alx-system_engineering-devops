@@ -2,9 +2,9 @@
 """ Access an API for a given employee ID and returns information
     about his/her TODO list progress.
 """
-from urllib import request
-import sys
 import json
+import sys
+from urllib import request
 
 
 def gather_data_from_api(base_url, employee_id):
