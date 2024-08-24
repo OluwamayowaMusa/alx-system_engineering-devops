@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Queries the reddit API """
+import json
 import requests
 
 
@@ -14,5 +15,5 @@ def number_of_subscribers(subreddit):
     Returns: Number of subscribers
     """
     request_url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    response = requests.get(request_url).json()
+    response = json.loads(requests.get(request_url).text)
     return response.get("data", {}).get("subscribers", 0)
