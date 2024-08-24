@@ -8,12 +8,13 @@ def top_ten(subreddit):
     Args:
         subreddit(str): Given subreddit
     """
-    request_url = f"https://www.reddit.com/r/{subreddit}/hot.json"
+    request_url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     params = {"limit": 10}
     response = requests.get(request_url, params, allow_redirects=False).json()
     posts = response.get("data", {}).get("children", None)
     if posts is None:
         print(None)
     else:
+        posts.pop(0)
         for post in posts:
             print(post.get("data").get("title"))
